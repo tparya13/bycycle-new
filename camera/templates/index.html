@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid mb-3">
+  {% if category %}
+ <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
+ <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 700px;" width="26%" height="450" alt="">
+ <h5 class="des mt-4 mb-5">{{category.desc}}</h5>
+ {% else %}
+</div>
+ 
+
+ <img class="can " src="../static/images/bycycle.jpg" style="margin-left: 300px;" width="65%" height="500" style="margin-top: 200px;" alt="">
+ {% endif %}
+ 
+
+
+
+ <div class="container-fluid mb-3">
+    <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 55px;">NEW TREK MODELS</h1>
+ </div>
+
+
+ 
+
+ <div class="rw row d-flex">
+  <div class="col-lg-6 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/parts 1.webp" width="590px" height="220px" style="margin-left:320px;" alt="...">
+  </div>  
+  <div class="col-lg-6 col-md-2 col-sm-12">
+    <img class=" " src="../static/images/part2.webp" width="570px" height="220px" alt="...">
+  </div>  
+</div>
+
+<div class="rw row d-flex">
+<div class="col-lg-6 col-md-2 col-sm-12">
+  <img class=" " src="../static/images/part3.webp" width="590px" height="220px" style="margin-top:20px; margin-left: 320px;" alt="...">
+</div>  
+<div class="col-lg-6 col-md-2 col-sm-12">
+  <img class=" " src="../static/images/parts4.webp" width="570px" height="220px" style="margin-top:20px;" alt="...">
+</div>  
+</div>
+
+
+  
+
+
+
+
+
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 55px;">In Stock Bikes</h1>
+</div>
+
+
+
+
+
+
+
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card-group mb-3">
+      {% for i in products %}
+        {% if i.available %}
+        <a href="{% url 'shop:details' i.id %}">
+        <div class="cad border p-5 mb-5 bg-body rounded mb-4 me-2 shadow">
+          <img src="{{i.image.url}}" height="150px" class="card-img-top rounded-4 " alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <h5 class="card-text">${{i.price}}</h5>
+            <h6 class="card-text">{{i.category}}</h6>
+          </div>
+        </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+</div>
+
+
+<div class="container"  style="margin-right: 550px;">
+  <img src="../static/images/WhyElectric.jpg"alt="">
+</div>
+
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 40px;">PROFESSONAL SERVISES</h1>
+</div>
+
+
+<div class="rw row d-flex">
+  <div class="col-lg-6 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/MECH 1.webp" width="590px" height="220px" style="margin-left:320px;" alt="...">
+  </div>  
+  <div class="col-lg-6 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/parts 1.webp" width="590px" height="220px" style="margin-left:320px;" alt="...">
+  </div> 
+  <div class="col-lg-6 col-md-2 col-sm-12">                     
+    <img class=" " src="../static/images/parts 1.webp" width="590px" height="220px" style="margin-left:320px;" alt="...">
+  </div> 
+</div>  
+
+
+<div class="paginator mx-auto">
+  {% if products.paginator.num_pages > 1 %}<hr>
+    <div class="text-center">
+      {% for pg in products.paginator.page_range %}
+      <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active {% endif %}">{{pg}}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</div>
+
+
+{% endblock %}
