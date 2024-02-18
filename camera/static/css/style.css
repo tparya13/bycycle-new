@@ -84,6 +84,25 @@
   
   }
 
-  
-  
-  
+  .image-gallery{
+    width: 500px;
+    height: 300px;
+    overflow-x: hidden;
+    white-space:nowra
+
+  }
+.image-gallery img{
+  width: 500px;
+  height: 100%;
+  margin-right: 10px;
+}  
+
+
+
+.footer{
+  background-color: black;
+}
+.container{
+  max-width: 1170px;
+  margin: auto;
+}

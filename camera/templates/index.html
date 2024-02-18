@@ -77,8 +77,26 @@
         </a>
         {% endif %}
         {% endfor %}
+     
       </div>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.image-gallery').on('mousedown', function(event) {
+            this.scrollLeft = this.scrollLeft + event.clientX;
+            $(this).on('mousemove', function(event) {
+                this.scrollLeft = this.scrollLeft - event.clientX;
+            });
+        }).on('mouseup mouseleave', function() {
+            $(this).off('mousemove');
+        });
+    });
+</script>
+
+
 
 
 <div class="container"  style="margin-right: 600px;">
@@ -104,6 +122,23 @@
 </div>  
 
 
+
+<div class="container-fluid mb-3">
+  <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 45px;">- THE SHOP -</h1>
+</div>
+<h5 class="des mt-4 mb-5">
+  We are very proud to be part of our cycling community since 1973!</br>
+  We are bike geeks plain and simple. We love what we do. We sweat the details. </br>
+  We commute, we race, we ride with our kids, we ride charity events, we do multi-sport, we get dirty, we get bloody, and tomorrow we will wake up and do it all over again!</h5>
+  <div class="container-fluid mb-3">
+    <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 75px;">Join  Our  Team</h1>
+  </div>
+
+
+<div>
+    <button type="START HERE" class="btn btn-danger" style="margin-left: 800px; font-size: 35px; margin-bottom: 20px; margin-top: 20px;">START HERE</button>
+</div>
+
 <div class="paginator mx-auto">
   {% if products.paginator.num_pages > 1 %}<hr>
     <div class="text-center">
@@ -114,6 +149,4 @@
   {% endif %}
 
 </div>
-
-
 {% endblock %}
