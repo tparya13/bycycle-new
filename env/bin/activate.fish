@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/media/arya/db3eaa97-2d8b-4e41-8ff5-a815fc072330/project/env"
+set -gx VIRTUAL_ENV "/media/arya/db3eaa97-2d8b-4e41-8ff5-a815fc072330/bycycle/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

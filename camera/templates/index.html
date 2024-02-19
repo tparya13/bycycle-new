@@ -7,6 +7,7 @@
  <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
  <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 700px;" width="26%" height="450" alt="">
  <h5 class="des mt-4 mb-5">{{category.desc}}</h5>
+ <link rel="stylesheet" href="{% static 'css\style.css' %}">
  {% else %}
 </div>
  
@@ -54,13 +55,6 @@
 <div class="container-fluid mb-3">
   <h1 class="hed mt-5 mb-2" style="margin-left: 50px; font-size: 55px;">In Stock Bikes</h1>
 </div>
-
-
-
-
-
-
-
 <div class="container-fluid d-flex justify-content-center">
     <div class="card-group mb-3">
       {% for i in products %}
@@ -75,8 +69,11 @@
           </div>
         </div>
         </a>
+        
         {% endif %}
         {% endfor %}
+
+
      
       </div>
 </div>
@@ -99,7 +96,7 @@
 
 
 
-<div class="container"  style="margin-right: 600px;">
+<div class="container"  style="margin-right: 1000px;">
   <img src="../static/images/WhyElectric.jpg"alt="">
 </div>
 
@@ -149,4 +146,7 @@
   {% endif %}
 
 </div>
+
+
+
 {% endblock %}

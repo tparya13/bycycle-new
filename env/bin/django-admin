@@ -1,4 +1,4 @@
-#!/media/arya/db3eaa97-2d8b-4e41-8ff5-a815fc072330/project/env/bin/python3
+#!/media/arya/db3eaa97-2d8b-4e41-8ff5-a815fc072330/bycycle/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

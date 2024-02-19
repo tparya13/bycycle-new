@@ -93,12 +93,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}"><h1>MAPLEWOOD</h1></a>
+                    
+          <div>
+            <button type="" class="btn btn-danger" style="margin-left: 40px; font-size: 20px; padding-top: 1px; padding-bottom: 1px; background-color: red;">BICYCLE</button>
+          </div>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'shop:home' %}" style="margin-top: 40px; margin-left: 50px;">Home</a>
         </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
+            aria-expanded="false" style="margin-top: 40px; margin-left: 50px;">
             Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -124,8 +134,8 @@
         <span class="text-light">{{user}}</span>
         <a href="{% url 'auth:logout' %}" class="btn btn-outline-danger " type="button">Logout</a>
         {% else %}
-        <a href="{% url 'auth:login' %}" class="btn btn-outline-success me-2" type="button">Login</a>
-        <a href="{% url 'auth:register' %}" class="btn btn-outline-primary me-2" type="button">Signup</a>
+        <a href="{% url 'auth:login' %}" class="btn btn-outline-light me-2" type="button">Login</a>
+        <a href="{% url 'auth:register' %}" class="btn btn-outline-light me-2" type="button">Signup</a>
         
         {% endif %}
       </div>
